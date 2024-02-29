@@ -1,0 +1,139 @@
+<html>
+<head>
+<title>comando.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #2aacb8;}
+.s4 { color: #7a7e85;}
+.s5 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+comando.java</font>
+</center></td></tr></table>
+<pre><span class="s0">abstract class </span><span class="s1">Personagem </span><span class="s2">{</span>
+    <span class="s1">String nome</span><span class="s2">;</span>
+    <span class="s0">int </span><span class="s1">vida</span><span class="s2">;</span>
+    <span class="s0">int </span><span class="s1">ataque</span><span class="s2">;</span>
+    <span class="s0">int </span><span class="s1">defesa</span><span class="s2">;</span>
+
+    <span class="s0">public </span><span class="s1">Personagem</span><span class="s2">(</span><span class="s1">String nome</span><span class="s2">, </span><span class="s0">int </span><span class="s1">vida</span><span class="s2">, </span><span class="s0">int </span><span class="s1">ataque</span><span class="s2">, </span><span class="s0">int </span><span class="s1">defesa</span><span class="s2">) {</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">nome </span><span class="s2">= </span><span class="s1">nome</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">vida </span><span class="s2">= </span><span class="s1">vida</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">ataque </span><span class="s2">= </span><span class="s1">ataque</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">defesa </span><span class="s2">= </span><span class="s1">defesa</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">abstract void </span><span class="s1">atacar</span><span class="s2">(</span><span class="s1">Monstro monstro</span><span class="s2">);</span>
+    <span class="s0">abstract void </span><span class="s1">defender</span><span class="s2">(</span><span class="s0">int </span><span class="s1">ataqueRecebido</span><span class="s2">);</span>
+<span class="s2">}</span>
+
+<span class="s0">abstract class </span><span class="s1">Monstro </span><span class="s2">{</span>
+    <span class="s1">String nome</span><span class="s2">;</span>
+    <span class="s0">int </span><span class="s1">vida</span><span class="s2">;</span>
+    <span class="s0">int </span><span class="s1">ataque</span><span class="s2">;</span>
+    <span class="s0">int </span><span class="s1">defesa</span><span class="s2">;</span>
+
+    <span class="s0">public </span><span class="s1">Monstro</span><span class="s2">(</span><span class="s1">String nome</span><span class="s2">, </span><span class="s0">int </span><span class="s1">vida</span><span class="s2">, </span><span class="s0">int </span><span class="s1">ataque</span><span class="s2">, </span><span class="s0">int </span><span class="s1">defesa</span><span class="s2">) {</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">nome </span><span class="s2">= </span><span class="s1">nome</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">vida </span><span class="s2">= </span><span class="s1">vida</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">ataque </span><span class="s2">= </span><span class="s1">ataque</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">defesa </span><span class="s2">= </span><span class="s1">defesa</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">abstract void </span><span class="s1">receberDano</span><span class="s2">(</span><span class="s1">Personagem personagem</span><span class="s2">);</span>
+    <span class="s0">abstract void </span><span class="s1">defender</span><span class="s2">(</span><span class="s0">int </span><span class="s1">ataqueRecebido</span><span class="s2">);</span>
+<span class="s2">}</span>
+
+<span class="s0">class </span><span class="s1">Guerreiro </span><span class="s0">extends </span><span class="s1">Personagem </span><span class="s2">{</span>
+    <span class="s0">public </span><span class="s1">Guerreiro</span><span class="s2">(</span><span class="s1">String nome</span><span class="s2">, </span><span class="s0">int </span><span class="s1">vida</span><span class="s2">, </span><span class="s0">int </span><span class="s1">ataque</span><span class="s2">, </span><span class="s0">int </span><span class="s1">defesa</span><span class="s2">) {</span>
+        <span class="s0">super</span><span class="s2">(</span><span class="s1">nome</span><span class="s2">, </span><span class="s1">vida</span><span class="s2">, </span><span class="s1">ataque</span><span class="s2">, </span><span class="s1">defesa</span><span class="s2">);</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">void </span><span class="s1">atacar</span><span class="s2">(</span><span class="s1">Monstro monstro</span><span class="s2">) {</span>
+        <span class="s0">int </span><span class="s1">dano </span><span class="s2">= </span><span class="s0">this</span><span class="s2">.</span><span class="s1">ataque </span><span class="s2">- </span><span class="s1">monstro</span><span class="s2">.</span><span class="s1">defesa</span><span class="s2">;</span>
+        <span class="s1">monstro</span><span class="s2">.</span><span class="s1">receberDano</span><span class="s2">(</span><span class="s0">this</span><span class="s2">);</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">void </span><span class="s1">defender</span><span class="s2">(</span><span class="s0">int </span><span class="s1">ataqueRecebido</span><span class="s2">) {</span>
+        <span class="s0">int </span><span class="s1">dano </span><span class="s2">= </span><span class="s1">ataqueRecebido </span><span class="s2">- </span><span class="s0">this</span><span class="s2">.</span><span class="s1">defesa</span><span class="s2">;</span>
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">dano </span><span class="s2">&gt; </span><span class="s3">0</span><span class="s2">) {</span>
+            <span class="s0">this</span><span class="s2">.</span><span class="s1">vida </span><span class="s2">-= </span><span class="s1">dano</span><span class="s2">;</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+
+    <span class="s0">void </span><span class="s1">pular</span><span class="s2">() {</span>
+        <span class="s4">// Implementação do método pular</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+
+<span class="s0">class </span><span class="s1">Mago </span><span class="s0">extends </span><span class="s1">Personagem </span><span class="s2">{</span>
+    <span class="s0">public </span><span class="s1">Mago</span><span class="s2">(</span><span class="s1">String nome</span><span class="s2">, </span><span class="s0">int </span><span class="s1">vida</span><span class="s2">, </span><span class="s0">int </span><span class="s1">ataque</span><span class="s2">, </span><span class="s0">int </span><span class="s1">defesa</span><span class="s2">) {</span>
+        <span class="s0">super</span><span class="s2">(</span><span class="s1">nome</span><span class="s2">, </span><span class="s1">vida</span><span class="s2">, </span><span class="s1">ataque</span><span class="s2">, </span><span class="s1">defesa</span><span class="s2">);</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">void </span><span class="s1">atacar</span><span class="s2">(</span><span class="s1">Monstro monstro</span><span class="s2">) {</span>
+        <span class="s4">// Implementação do ataque do Mago</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">void </span><span class="s1">defender</span><span class="s2">(</span><span class="s0">int </span><span class="s1">ataqueRecebido</span><span class="s2">) {</span>
+        <span class="s4">// Implementação da defesa do Mago</span>
+    <span class="s2">}</span>
+
+    <span class="s0">void </span><span class="s1">soltarMagia</span><span class="s2">() {</span>
+        <span class="s4">// Implementação do método soltarMagia</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+
+<span class="s0">class </span><span class="s1">Arqueiro </span><span class="s0">extends </span><span class="s1">Personagem </span><span class="s2">{</span>
+    <span class="s0">public </span><span class="s1">Arqueiro</span><span class="s2">(</span><span class="s1">String nome</span><span class="s2">, </span><span class="s0">int </span><span class="s1">vida</span><span class="s2">, </span><span class="s0">int </span><span class="s1">ataque</span><span class="s2">, </span><span class="s0">int </span><span class="s1">defesa</span><span class="s2">) {</span>
+        <span class="s0">super</span><span class="s2">(</span><span class="s1">nome</span><span class="s2">, </span><span class="s1">vida</span><span class="s2">, </span><span class="s1">ataque</span><span class="s2">, </span><span class="s1">defesa</span><span class="s2">);</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">void </span><span class="s1">atacar</span><span class="s2">(</span><span class="s1">Monstro monstro</span><span class="s2">) {</span>
+        <span class="s4">// Implementação do ataque do Arqueiro</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">void </span><span class="s1">defender</span><span class="s2">(</span><span class="s0">int </span><span class="s1">ataqueRecebido</span><span class="s2">) {</span>
+        <span class="s4">// Implementação da defesa do Arqueiro</span>
+    <span class="s2">}</span>
+
+    <span class="s0">void </span><span class="s1">esquivar</span><span class="s2">() {</span>
+        <span class="s4">// Implementação do método esquivar</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+
+<span class="s0">public class </span><span class="s1">Main </span><span class="s2">{</span>
+    <span class="s0">public static void </span><span class="s1">main</span><span class="s2">(</span><span class="s1">String</span><span class="s2">[] </span><span class="s1">args</span><span class="s2">) {</span>
+        <span class="s4">// Exemplo de utilização do RPG</span>
+        <span class="s1">Guerreiro guerreiro </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Guerreiro</span><span class="s2">(</span><span class="s5">&quot;Guerreiro1&quot;</span><span class="s2">, </span><span class="s3">100</span><span class="s2">, </span><span class="s3">20</span><span class="s2">, </span><span class="s3">30</span><span class="s2">);</span>
+        <span class="s1">Mago mago </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Mago</span><span class="s2">(</span><span class="s5">&quot;Mago1&quot;</span><span class="s2">, </span><span class="s3">80</span><span class="s2">, </span><span class="s3">25</span><span class="s2">, </span><span class="s3">40</span><span class="s2">);</span>
+        <span class="s1">Arqueiro arqueiro </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Arqueiro</span><span class="s2">(</span><span class="s5">&quot;Arqueiro1&quot;</span><span class="s2">, </span><span class="s3">90</span><span class="s2">, </span><span class="s3">30</span><span class="s2">, </span><span class="s3">20</span><span class="s2">);</span>
+
+        <span class="s1">Monstro monstro </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Monstro</span><span class="s2">(</span><span class="s5">&quot;Monstro1&quot;</span><span class="s2">, </span><span class="s3">150</span><span class="s2">, </span><span class="s3">15</span><span class="s2">, </span><span class="s3">10</span><span class="s2">);</span>
+
+        <span class="s4">// Ação do guerreiro</span>
+        <span class="s1">guerreiro</span><span class="s2">.</span><span class="s1">atacar</span><span class="s2">(</span><span class="s1">monstro</span><span class="s2">);</span>
+
+        <span class="s4">// Ação do mago</span>
+        <span class="s1">mago</span><span class="s2">.</span><span class="s1">soltarMagia</span><span class="s2">();</span>
+
+        <span class="s4">// Ação do arqueiro</span>
+        <span class="s1">arqueiro</span><span class="s2">.</span><span class="s1">atacar</span><span class="s2">(</span><span class="s1">monstro</span><span class="s2">);</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+</pre>
+</body>
+</html>
